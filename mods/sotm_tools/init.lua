@@ -16,6 +16,11 @@ minetest.register_node("sotm_tools:jackhammer", {
     },
     on_use = function(itemstack, user, pointed_thing)
         if not pointed_thing or pointed_thing.type ~= "node" then
+            if pointed_thing.type == "object" then
+                -- Pass through to entity's on_punch
+                pointed_thing.ref:punch(user, 0,
+                    minetest.registered_items[""].tool_capabilities, nil)
+            end
             return itemstack
         end
 
