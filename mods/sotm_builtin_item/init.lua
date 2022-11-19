@@ -18,7 +18,10 @@ builtin_item_def.on_step = function(self, dtime, ...)
     for _, player in pairs(players) do
         local selfpos = self.object:get_pos()
         local playerpos = player:get_pos()
-        local dist = vector.distance(selfpos, playerpos)
+        local dist_x = (selfpos.x-playerpos.x)^2
+        local dist_y = ((selfpos.x-playerpos.x)/2)^2
+        local dist_z = (selfpos.z-playerpos.z)^2
+        local dist = math.sqrt(dist_x + dist_y + dist_z)
         if dist < 1 then
             item_add(self, player)
             return
