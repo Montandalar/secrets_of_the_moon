@@ -1,0 +1,12 @@
+[submodule "mods/creative"]
+	path = mods/creative
+	url = https://github.com/minetest-game-mods/creative
+[submodule "mods/sfinv"]
+	path = mods/sfinv
+	url = https://github.com/rubenwardy/sfinv
+[submodule "mods/sound_api_core"]
+	path = mods/sound_api_core
+	url = https://github.com/mt-mods/sound_api_core
+[submodule "mods/player_api"]
+	path = mods/player_api
+	url = https://github.com/minetest-game-mods/player_api
