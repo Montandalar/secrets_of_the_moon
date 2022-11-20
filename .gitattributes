@@ -1,0 +1,3 @@
+*.wav export-ignore
+*.xcf export-ignore
+*.blend export-ignore
