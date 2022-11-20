@@ -28,12 +28,12 @@ minetest.register_node("sotm_tools:jackhammer", {
         local wear = itemstack:get_wear()
         local new_wear = wear+1000
         if new_wear >= 65535 then
-            minetest.sound_play("sotm_sfx_denied", {pos = userpos})
+            minetest.sound_play("sotm_sfx_denied", {pos = userpos, gain = 0.4})
             return itemstack
         end
         itemstack:set_wear(wear+1000)
 
-        minetest.sound_play("sotm_jackhammer", {pos = userpos})
+        minetest.sound_play("sotm_jackhammer", {pos = userpos, gain = 0.3})
 
         local under_pos = pointed_thing.under
         local under_node = minetest.get_node(under_pos)

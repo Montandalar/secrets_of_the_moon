@@ -5,7 +5,7 @@ local function item_add(self, player)
     local itemstring = self.itemstring
     local player_inv = player:get_inventory()
     local remainder = player_inv:add_item("main", ItemStack(itemstring))
-    minetest.sound_play("sotm_pickup", {pos=player:get_pos()})
+    minetest.sound_play("sotm_pickup", {gain = 0.2, pos=player:get_pos()})
     if remainder:to_string() ~= "" then
         self.itemstring = remainder:to_string()
     else
