@@ -21,7 +21,7 @@ local function setup_sky(player)
 
     player:set_stars({
         visible = true,
-        day_opacity = 1.0,
+        day_opacity = 0.4,
     })
 end
 
