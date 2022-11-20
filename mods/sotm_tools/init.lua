@@ -1,4 +1,4 @@
-minetest.register_node("sotm_tools:jackhammer", {
+minetest.register_tool("sotm_tools:jackhammer", {
     description = "Jackhammer",
     drawtype = "plantlike",
     tiles = {"sotm_jackhammer.png"},
