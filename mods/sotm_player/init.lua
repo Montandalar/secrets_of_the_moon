@@ -17,7 +17,14 @@ minetest.register_tool(":", {
     },
 })
 
--- Spacesuit texture
 minetest.register_on_joinplayer(function(player)
+    -- Spacesuit texture
     player_api.set_textures(player, {"sotm_player.png"})
+
+    player:hud_set_flags({
+        minimap = true,
+        minimap_radar = true,
+    })
+
+    player:set_properties({zoom_fov = 15})
 end)
