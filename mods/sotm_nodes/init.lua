@@ -110,6 +110,7 @@ minetest.register_node("sotm_nodes:comms", {
             {-0.5000, -0.5000, -0.5000, 0.5000, 0.2500, 0.2500}
         }
     },
+    use_texture_alpha = "clip",
     tiles = {
         "sotm_commscabinet.png^[sheet:4x1:1,0", --top
         "sotm_commscabinet.png^[sheet:4x1:1,0^[transformFY", --bottom
@@ -131,13 +132,12 @@ minetest.register_node("sotm_nodes:comms", {
     on_timer = function(pos)
         --local found_filled_collectors = {}
         for nodename, _ in pairs(sotm_nodes.registered_collectors) do
-            print(nodename)
             local pos = minetest.find_node_near(pos, 5, nodename)
-            if not pos then print("Missing: ".. nodename) return true end
+            if not pos then return true end
 
             local node = minetest.get_node(pos)
             local result = (node.param2 >= 50)
-            if not result then print("Not filled:"..nodename) return true end
+            if not result then return true end
             --found_filled_collectors[nodename] = (node.param2 >= 50)
         end
 
@@ -177,5 +177,6 @@ minetest.register_alias("mapgen_stone", "sotm_nodes:moonrock")
 
 minetest.register_on_mods_loaded(function()
     sotm_tools.register_important_equipment("sotm_nodes:al2219")
+    sotm_tools.register_important_equipment("sotm_nodes:porthole")
     sotm_tools.register_important_equipment("sotm_nodes:comms")
 end)

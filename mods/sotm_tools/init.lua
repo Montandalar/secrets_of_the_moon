@@ -1,9 +1,14 @@
-sotm_tools = { list = {}}
+sotm_tools = { list = {} }
 local tool_list = sotm_tools.list
 local important_equipment = {}
 
-local function sound_play_denied(pos)
-    minetest.sound_play("sotm_sfx_denied", {pos = pos, gain = 0.4})
+function sotm_tools.register_important_equipment(nodename)
+    important_equipment[nodename] = true
+end
+
+local function sound_play_denied(pos, player)
+    minetest.sound_play("sotm_sfx_denied",
+        {pos = pos, gain = 0.4, to_player = player})
 end
 
 minetest.register_tool("sotm_tools:jackhammer", {
@@ -32,9 +37,11 @@ minetest.register_tool("sotm_tools:jackhammer", {
             return itemstack
         end
 
+        local userpos = user:get_pos()
         local under_pos = pointed_thing.under
         local under_node = minetest.get_node(under_pos)
         local under_node_name = under_node.name
+        print(minetest.settings:get("creative_mode"))
         if important_equipment[under_node_name] then
             if under_node_name:find("sotm_tools:charger_charged") then
                 minetest.registered_nodes[under_node_name].on_punch(
@@ -49,16 +56,16 @@ minetest.register_tool("sotm_tools:jackhammer", {
             else
                 msg = "You can't remove that, it's important equipment!"
             end
-            minetest.chat_send_player(user:get_player_name(), msg)
-            sound_play_denied(userpos)
+            local username = user:get_player_name()
+            minetest.chat_send_player(username, msg)
+            sound_play_denied(userpos, username)
             return itemstack
         end
 
-        local userpos = user:get_pos()
         local wear = itemstack:get_wear()
         local new_wear = wear+1000
         if new_wear >= 65535 then
-            sound_play_denied(userpos)
+            sound_play_denied(userpos, user:get_player_name())
             return itemstack
         end
         itemstack:set_wear(wear+1000)
@@ -94,7 +101,7 @@ minetest.register_tool("sotm_tools:jackhammer", {
 local charger_basedef = {
     paramtype = "light",
     paramtype2 = "wallmounted",
-    light_source = 4,
+    light_source = 8,
     tiles = {"sotm_charger_base.png"},
     drawtype = "signlike",
     walkable = false,
@@ -109,7 +116,7 @@ local function empty_charger_rightclick(pos, node, clicker, itemstack, pointed_t
     local itemstack_name = itemstack:get_name()
     local tool
     if itemstack_name == "" then -- hand
-        minetest.chat_send_player(clicker:get_player_name(), 
+        minetest.chat_send_player(clicker:get_player_name(),
             "The charger is empty right now. You can put power tools like the "
            .. "jackhammer in it.")
         return itemstack
@@ -117,7 +124,7 @@ local function empty_charger_rightclick(pos, node, clicker, itemstack, pointed_t
 
     local toolname = itemstack_name:sub(itemstack_name:find(":")+1, -1)
     if not tool_list[toolname] then
-        minetest.chat_send_player(clicker:get_player_name(), 
+        minetest.chat_send_player(clicker:get_player_name(),
             "That's not a tool you can charge with the tool charger.")
         return itemstack
     end
@@ -165,7 +172,7 @@ local function charging_on_timer(pos)
     local node = minetest.get_node(pos)
     local nodename = node.name
     local start, fin = nodename:find("charging_")
-    assert(start ~= nil, "Charger could not convert to charged state @" 
+    assert(start ~= nil, "Charger could not convert to charged state @"
         .. tostring(pos) .. ": substring 'charging_' not found")
     local toolname = nodename:sub(fin+1,-1)
     minetest.set_node(pos,
