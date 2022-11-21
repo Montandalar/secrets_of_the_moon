@@ -1,3 +1,5 @@
+sotm_nodes = {}
+
 -- Natural Environment
 minetest.register_node("sotm_nodes:vacuum", {
     description = "Vacuum",
@@ -74,6 +76,7 @@ minetest.register_node("sotm_nodes:porthole", {
 })
 
 dofile(minetest.get_modpath("sotm_nodes") .. "/doors.lua")
+dofile(minetest.get_modpath("sotm_nodes") .. "/collectors.lua")
 
 local worklight_box = {
 	type = "fixed",

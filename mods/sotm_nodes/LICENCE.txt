@@ -3,6 +3,14 @@ Licence of Code
 Copyright (C) 2022 Blockhead, licensed under the GNU Affero General Public
 License, version 3.0 or later, as part of the Secrets of the Moon project.
 
+Models
+------
+sotm_worklight.* (C) 2022 Blockhead -- CC BY-SA 4.0
+
+Textures
+--------
+All textures (C) 2022 Blockhead -- CC BY-SA 4.0
+
 Sounds
 ------
 
