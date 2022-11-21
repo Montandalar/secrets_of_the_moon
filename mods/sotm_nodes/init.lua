@@ -48,6 +48,20 @@ minetest.register_node("sotm_nodes:moonsand", {
     }
 })
 
+minetest.register_node("sotm_nodes:moonice", {
+    description = "Moon Ice",
+    drawtype = "glasslike",
+    paramtype1 = "light",
+    paramtype2 = "none",
+    tiles = {"sotm_moonice.png"},
+    use_texture_alpha = "blend",
+    sounds = {
+        footstep = {name = "default_ice_footstep", gain = 0.15},
+        dig = {name = "default_ice_dig", gain = 0.5},
+        dug = {name = "default_ice_dug", gain = 0.5},
+    },
+})
+
 -- Built environment
 minetest.register_node("sotm_nodes:al2219", {
     description = "Aluminium Alloy 2219",

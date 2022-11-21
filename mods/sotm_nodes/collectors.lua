@@ -1,13 +1,3 @@
---[[minetest.register_node("sotm_nodes:collector_moonrock", { 
-    description = "Moonrock Collection Bin",
-    drawtype = "glasslike_framed_optional",
-    paramtype2 = "glasslikeliquidlevel",
-    tiles = {"sotm_collector.png"},
-    use_texture_alpha = "blend",
-    special_tiles = {"sotm_moonrock.png"},
-})
---]]
-
 function sotm_nodes.register_collector(base_node)
     local base_def = minetest.registered_nodes[base_node]
     local base_desc = base_def.description
@@ -61,14 +51,16 @@ function sotm_nodes.register_collector(base_node)
             return itemstack
         end,
     })
+
+    minetest.register_on_mods_loaded(function()
+        if minetest.get_modpath("sotm_tools") then
+            sotm_tools.register_important_equipment("sotm_nodes:collector_"
+                ..base_name)
+        end
+    end)
 end
 
 sotm_nodes.register_collector("sotm_nodes:moonrock")
 sotm_nodes.register_collector("sotm_nodes:moonbasalt")
 sotm_nodes.register_collector("sotm_nodes:moonsand")
-
-minetest.register_on_mods_loaded(function()
-    if minetest.get_modpath("sotm_tools") then
-        sotm_tools.register_important_equipment("sotm_nodes:collector_moonrock")
-    end
-end)
+sotm_nodes.register_collector("sotm_nodes:moonice")
