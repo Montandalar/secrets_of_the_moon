@@ -1,0 +1,142 @@
+Licence of Code
+---------------
+Copyright (C) 2022 Blockhead, licensed under the GNU Affero General Public
+License, version 3.0 or later, as part of the Secrets of the Moon project.
+
+Sounds
+------
+Glass breaking sounds (CC BY 3.0):
+  1: http://www.freesound.org/people/cmusounddesign/sounds/71947/
+  2: http://www.freesound.org/people/Tomlija/sounds/97669/
+  3: http://www.freesound.org/people/lsprice/sounds/88808/
+
+Metal sounds:
+  default_dig_metal.ogg - yadronoff - CC-BY-3.0
+  - https://www.freesound.org/people/yadronoff/sounds/320397/
+  default_dug_metal.*.ogg - Iwan Gabovitch - qubodup - CC0
+  - http://opengameart.org/users/qubodup
+  default_metal_footstep.*.ogg - (CC0 1.0) - CC0 1.0
+  - https://freesound.org/people/mypantsfelldown/sounds/398937/
+  default_place_node_metal.*.ogg - Ogrebane - CC0
+  - http://opengameart.org/content/wood-and-metal-sound-effects-volume-2
+
+dheming (CC BY 3.0):
+https://freesound.org/people/dheming/sounds/268023/
+  default_ice_dig.*.ogg
+
+InspectorJ (CC BY 3.0):
+https://freesound.org/people/InspectorJ/sounds/416967/
+  default_ice_footstep.*.ogg
+
+Mito551 (sounds) (CC BY-SA 3.0):
+  default_place_node.*.ogg
+  default_place_node_hard.*.ogg
+
+worthahep88 (CC0 1.0):
+https://freesound.org/people/worthahep88/sounds/319224/
+  default_sand_footstep.*.ogg
+
+
+Licenses of media (textures, models and sounds)
+-----------------------------------------------
+
+Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+Copyright (C) 2010-2018:
+
+  celeron55, Perttu Ahola <celeron55@gmail.com>
+  Mito551
+
+You are free to:
+Share — copy and redistribute the material in any medium or format.
+Adapt — remix, transform, and build upon the material for any purpose, even commercially.
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+Under the following terms:
+
+Attribution — You must give appropriate credit, provide a link to the license, and
+indicate if changes were made. You may do so in any reasonable manner, but not in any way
+that suggests the licensor endorses you or your use.
+
+ShareAlike — If you remix, transform, or build upon the material, you must distribute
+your contributions under the same license as the original.
+
+No additional restrictions — You may not apply legal terms or technological measures that
+legally restrict others from doing anything the license permits.
+
+Notices:
+
+You do not have to comply with the license for elements of the material in the public
+domain or where your use is permitted by an applicable exception or limitation.
+No warranties are given. The license may not give you all of the permissions necessary
+for your intended use. For example, other rights such as publicity, privacy, or moral
+rights may limit how you use the material.
+
+For more details:
+http://creativecommons.org/licenses/by-sa/3.0/
+
+-----------------------
+
+Attribution 3.0 Unported (CC BY 3.0)
+
+Copyright (C) 2009 cmusounddesign
+Copyright (C) 2010 Tomlija
+Copyright (C) 2010 lsprice
+Copyright (C) 2015 yadronoff
+
+You are free to:
+Share — copy and redistribute the material in any medium or format.
+Adapt — remix, transform, and build upon the material for any purpose, even commercially.
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+Under the following terms:
+
+Attribution — You must give appropriate credit, provide a link to the license, and
+indicate if changes were made. You may do so in any reasonable manner, but not in any way
+that suggests the licensor endorses you or your use.
+
+No additional restrictions — You may not apply legal terms or technological measures that
+legally restrict others from doing anything the license permits.
+
+Notices:
+
+You do not have to comply with the license for elements of the material in the public
+domain or where your use is permitted by an applicable exception or limitation.
+No warranties are given. The license may not give you all of the permissions necessary
+for your intended use. For example, other rights such as publicity, privacy, or moral
+rights may limit how you use the material.
+
+For more details:
+http://creativecommons.org/licenses/by/3.0/
+
+-----------------------
+
+CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+
+Iwan Gabovitch
+Ogrebane
+
+No Copyright
+
+The person who associated a work with this deed has dedicated the work to the
+public domain by waiving all of his or her rights to the work worldwide under
+copyright law, including all related and neighboring rights, to the extent
+allowed by law.
+
+You can copy, modify, distribute and perform the work, even for commercial
+purposes, all without asking permission. See Other Information below.
+
+Other Information:
+
+In no way are the patent or trademark rights of any person affected by CC0, nor
+are the rights that other persons may have in the work or in how the work is
+used, such as publicity or privacy rights.
+
+Unless expressly stated otherwise, the person who associated a work with this
+deed makes no warranties about the work, and disclaims liability for all uses
+of the work, to the fullest extent permitted by applicable law.
+
+When using or citing the work, you should not imply endorsement by the author
+or the affirmer.
+
+For more details:
+https://creativecommons.org/publicdomain/zero/1.0/
