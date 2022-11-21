@@ -7,10 +7,10 @@ part of the Secrets of the Moon game for Minetest.
 
 Licence of sounds
 -----------------
-"Drill" sotm_drill.ogg (C) 2015 by GowlerMusic on Freesound.org, licensed under
-the Creative Commons Attribution 4.0 International License (CC BY 4.0) 
+"Tool Charging" and "Denied" (sotm_sfx_charging.ogg, sotm_sfx_denied.ogg) (C)
+2022 by Blockhead, licensed under the Creative Commons Attribution-ShareAlike
+4.0 International License (CC BY-SA 4.0)
 
 "Construction, Jackhammer Manual, A.wav" sotm_jackhammer.ogg (C) 2018 by InspectorJ
 (www.jshadow.co.uk) on Freesound.org
-
 Licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0)

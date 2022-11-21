@@ -11,15 +11,38 @@ minetest.register_node("sotm_nodes:vacuum", {
     floodable = true,
 })
 
+local sounds_stone = {
+    footstep = { name = "sotm_stone", gain = 0.1 },
+    dig = { name = "sotm_stone" },
+    dug = { name = "sotm_stone" },
+}
+
 minetest.register_node("sotm_nodes:moonrock", {
     description = "Moon Rock",
     drawtype = "normal",
     tiles = {"sotm_moonrock.png"},
     groups = {cracky=1},
+    sounds = sounds_stone,
+})
+
+minetest.register_node("sotm_nodes:moonbasalt", {
+    description = "Moon Basalt",
+    drawtype = "normal",
+    tiles = {"sotm_moonbasalt.png"},
+    groups = {cracky=1},
+    sounds = sounds_stone,
+})
+
+minetest.register_node("sotm_nodes:moonsand", {
+    description = "Moon Sand",
+    drawtype = "normal",
+    tiles = {"sotm_moonsand.png"},
+    groups = {crumbly=1},
     sounds = {
-        dig = { name = "sotm_stone" },
-        dug = { name = "sotm_stone" },
-    },
+        footstep = {name = "default_sand_footstep", gain = 0.05},
+        dug = {name = "default_sand_footstep", gain = 0.15},
+        place = {name = "default_place_node", gain = 1.0},
+    }
 })
 
 -- Built environment
