@@ -9,6 +9,7 @@ minetest.register_node("sotm_nodes:vacuum", {
     diggable = false,
     buildable_to = true,
     floodable = true,
+    drowning = 1,
 })
 
 local sounds_stone = {
@@ -50,6 +51,12 @@ minetest.register_node("sotm_nodes:al2219", {
     description = "Aluminium Alloy 2219",
     drawtype = "normal",
     tiles = {"sotm_al2219.png"},
+    sounds = {
+        footstep = {name = "default_metal_footstep", gain = 0.2},
+        dig = {name = "default_dig_metal", gain = 0.5},
+        dug = {name = "default_dug_metal", gain = 0.5},
+        place = {name = "default_place_node_metal", gain = 0.5},
+    },
     groups = {metal=1, snappy=1},
 })
 
@@ -58,8 +65,15 @@ minetest.register_node("sotm_nodes:porthole", {
     drawtype = "glasslike",
     tiles = {"sotm_porthole.png"},
     use_texture_alpha = "clip",
+    sounds = {
+        footstep =  {name = "default_glass_footstep", gain = 0.3},
+        dig = {name = "default_glass_footstep", gain = 0.5},
+        dug = {name = "default_break_glass", gain = 1.0},
+    },
     groups = {cracky=1}
 })
+
+dofile(minetest.get_modpath("sotm_nodes") .. "/doors.lua")
 
 local worklight_box = {
 	type = "fixed",
@@ -87,3 +101,7 @@ minetest.register_node("sotm_nodes:worklight", {
 -- on_place to avoid free air pockets
 
 minetest.register_alias("mapgen_stone", "sotm_nodes:moonrock")
+
+minetest.register_on_mods_loaded(function()
+    sotm_tools.register_important_equipment("sotm_nodes:al2219")
+end)
