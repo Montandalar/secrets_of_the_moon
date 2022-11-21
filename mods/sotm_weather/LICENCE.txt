@@ -1,0 +1,16 @@
+Licence of code
+---------------
+Copyright (C) 2022 Blockhead
+
+Licensed under the GNU Affero General Public License, version 3.0 or later, as
+part of the Secrets of the Moon game for Minetest.
+
+Licence of textures
+-------------------
+Copyright (C) 2022 Blockhead
+
+Licensed under the Creative Commons Attribution-ShareAlike 4.0 International
+License (CC BY-SA 4.0).
+
+"Blocky Earth" (sotm_earth.*)
+"Pale Sun" (sotm_sun.png)

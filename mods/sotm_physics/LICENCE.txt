@@ -4,8 +4,3 @@ Copyright (C) 2022 Blockhead
 
 Licensed under the GNU Affero General Public License, version 3.0 or later, as
 part of the Secrets of the Moon game for Minetest.
-
-Licence of sounds
------------------
-"Item Pickup 1-4" and "Denied" (C) 2022 by Blockhead. Licensed under the
-Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)

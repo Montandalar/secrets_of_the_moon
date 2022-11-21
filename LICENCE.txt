@@ -1,13 +1,11 @@
-Licence of media (textures and sounds)
+Licence of media (textures, sounds and models)
 --------------------------------------
-Copyright (C) 2022 Blockhead <jbis1337@hotmail.com>
+Copyright (C) 2022 Blockhead <jbis1337@hotmail.com> where not otherwise
+specified, and all Blockhead media from this project licensed
+under the Creative Commons Attribution-ShareAlike 4.0 International License (CC
+BY-SA 4.0).
+
 See README.txt in each mod directory for information about other authors.
-
-Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
-http://creativecommons.org/licenses/by-sa/3.0/
-
-Licence of menu/header.png
-Copyright (C) 2022 Blockhead <jbis1337@hotmail.com>
 
 License of source code
 ----------------------
