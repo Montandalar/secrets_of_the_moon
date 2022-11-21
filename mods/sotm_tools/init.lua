@@ -41,7 +41,6 @@ minetest.register_tool("sotm_tools:jackhammer", {
         local under_pos = pointed_thing.under
         local under_node = minetest.get_node(under_pos)
         local under_node_name = under_node.name
-        print(minetest.settings:get("creative_mode"))
         if important_equipment[under_node_name] then
             if under_node_name:find("sotm_tools:charger_charged") then
                 minetest.registered_nodes[under_node_name].on_punch(
@@ -90,7 +89,9 @@ minetest.register_tool("sotm_tools:jackhammer", {
                     -1 * user:get_physics_override().gravity,
                     0
                 ),
-                texture = minetest.registered_nodes[under_node.name].tiles[1],
+                texture = minetest.registered_nodes[under_node.name].tiles
+                      and minetest.registered_nodes[under_node.name].tiles[1]
+                or {"sotm_stone.png"},
             })
         end
         return itemstack

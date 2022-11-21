@@ -173,7 +173,6 @@ minetest.register_node("sotm_nodes:worklight", {
 -- TODO: ladder, torch etc placement code to decide on vacuum or air surround in
 -- on_place to avoid free air pockets
 
-minetest.register_alias("mapgen_stone", "sotm_nodes:moonrock")
 
 minetest.register_on_mods_loaded(function()
     sotm_tools.register_important_equipment("sotm_nodes:al2219")

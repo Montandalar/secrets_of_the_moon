@@ -32,7 +32,9 @@ minetest.register_on_joinplayer(function(player)
    })
 end)
 
-local spawn = vector.new(0, 63.5, 0)
+local spawn = sotm_spawn
+assert('spawn', "Couldn't find a spawnpoint, sorry!")
+local spawn = vector.new(0, sotm_spawn.y+1.5, 0)
 
 minetest.register_on_joinplayer(function(player, last_login)
     if last_login ~= nil then return end
@@ -50,4 +52,14 @@ end)
 
 minetest.register_on_respawnplayer(function(player)
     player:set_pos(spawn)
+end)
+
+minetest.after(1, function()
+    if minetest.get_gametime() > 5 then
+        return
+    end
+
+    for idx,ply in pairs(minetest.get_connected_players()) do
+        ply:set_pos(vector.new(sotm_spawn.x, sotm_spawn.y+0.5, sotm_spawn.z))
+    end
 end)
