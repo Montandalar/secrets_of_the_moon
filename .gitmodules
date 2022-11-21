@@ -1,6 +1,3 @@
-[submodule "mods/creative"]
-	path = mods/creative
-	url = https://github.com/minetest-game-mods/creative
 [submodule "mods/sfinv"]
 	path = mods/sfinv
 	url = https://github.com/rubenwardy/sfinv
