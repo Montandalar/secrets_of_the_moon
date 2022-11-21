@@ -28,7 +28,7 @@ minetest.register_on_joinplayer(function(player)
 
     player:set_properties({
        zoom_fov = 15,
-       breath_max = 60000, -- 10 minutes of air outside the base
+       --breath_max = 60000, -- --- unlimited --10 minutes of air outside the base
    })
 end)
 
