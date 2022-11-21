@@ -26,6 +26,7 @@ minetest.register_node("sotm_nodes:moonrock", {
     tiles = {"sotm_moonrock.png"},
     groups = {cracky=1},
     sounds = sounds_stone,
+    stack_max = "5",
 })
 
 minetest.register_node("sotm_nodes:moonbasalt", {
@@ -34,6 +35,7 @@ minetest.register_node("sotm_nodes:moonbasalt", {
     tiles = {"sotm_moonbasalt.png"},
     groups = {cracky=1},
     sounds = sounds_stone,
+    stack_max = "5",
 })
 
 minetest.register_node("sotm_nodes:moonsand", {
@@ -45,7 +47,8 @@ minetest.register_node("sotm_nodes:moonsand", {
         footstep = {name = "default_sand_footstep", gain = 0.05},
         dug = {name = "default_sand_footstep", gain = 0.15},
         place = {name = "default_place_node", gain = 1.0},
-    }
+    },
+    stack_max = "5",
 })
 
 minetest.register_node("sotm_nodes:moonice", {
@@ -60,6 +63,7 @@ minetest.register_node("sotm_nodes:moonice", {
         dig = {name = "default_ice_dig", gain = 0.5},
         dug = {name = "default_ice_dug", gain = 0.5},
     },
+    stack_max = "5",
 })
 
 -- Built environment
@@ -74,6 +78,7 @@ minetest.register_node("sotm_nodes:al2219", {
         place = {name = "default_place_node_metal", gain = 0.5},
     },
     groups = {metal=1, snappy=1},
+    stack_max = "5",
 })
 
 minetest.register_node("sotm_nodes:porthole", {
@@ -86,7 +91,8 @@ minetest.register_node("sotm_nodes:porthole", {
         dig = {name = "default_glass_footstep", gain = 0.5},
         dug = {name = "default_break_glass", gain = 1.0},
     },
-    groups = {cracky=1}
+    groups = {cracky=1},
+    stack_max = "5",
 })
 
 dofile(minetest.get_modpath("sotm_nodes") .. "/doors.lua")
@@ -110,6 +116,7 @@ minetest.register_node("sotm_nodes:worklight", {
     light_source = minetest.LIGHT_MAX,
     selection_box = worklight_box,
     collision_box = worklight_box,
+    stack_max = "5",
 })
 
 
