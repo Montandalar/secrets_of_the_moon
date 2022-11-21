@@ -28,7 +28,7 @@ local function sound_open(pos)
 end
 
 local function sound_close(pos)
-    minetest.sound_play("sotm_sliding_door_close", {pos=pos, gain=0.1})
+    minetest.sound_play("sotm_sliding_door_close", {pos=pos, gain=0.3})
 end
 
 local function lookright(pos, param2)
