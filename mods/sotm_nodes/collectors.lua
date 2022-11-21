@@ -1,3 +1,5 @@
+sotm_nodes.registered_collectors = {}
+
 function sotm_nodes.register_collector(base_node)
     local base_def = minetest.registered_nodes[base_node]
     local base_desc = base_def.description
@@ -9,8 +11,9 @@ function sotm_nodes.register_collector(base_node)
     local inv_cube_side = "(" .. base_tex .. "^sotm_collector.png)"
     local inv_image = minetest.inventorycube(inv_cube_side, 
         inv_cube_side, inv_cube_side)
+    local node_name = "sotm_nodes:collector_"..base_name
 
-    minetest.register_node("sotm_nodes:collector_"..base_name, {
+    minetest.register_node(node_name, {
         description = string.format("%s Collection Bin", base_desc),
         drawtype = "glasslike_framed_optional",
         paramtype = "light",
@@ -52,11 +55,11 @@ function sotm_nodes.register_collector(base_node)
         end,
     })
 
+    sotm_nodes.registered_collectors[node_name] = true
+
     minetest.register_on_mods_loaded(function()
-        if minetest.get_modpath("sotm_tools") then
-            sotm_tools.register_important_equipment("sotm_nodes:collector_"
-                ..base_name)
-        end
+        if not minetest.get_modpath("sotm_tools") then return end
+        sotm_tools.register_important_equipment(node_name)
     end)
 end
 

@@ -98,6 +98,55 @@ minetest.register_node("sotm_nodes:porthole", {
 dofile(minetest.get_modpath("sotm_nodes") .. "/doors.lua")
 dofile(minetest.get_modpath("sotm_nodes") .. "/collectors.lua")
 
+minetest.register_node("sotm_nodes:comms", {
+    description = "Comms Cabinet",
+    paramtype = "light",
+    light_source = 4,
+    paramtype2 = "facedir",
+    drawtype = "nodebox",
+    node_box = {
+        type = "fixed",
+        fixed = {
+            {-0.5000, -0.5000, -0.5000, 0.5000, 0.2500, 0.2500}
+        }
+    },
+    tiles = {
+        "sotm_commscabinet.png^[sheet:4x1:1,0", --top
+        "sotm_commscabinet.png^[sheet:4x1:1,0^[transformFY", --bottom
+        "sotm_commscabinet.png^[sheet:4x1:2,0", -- right
+        "sotm_commscabinet.png^[sheet:4x1:2,0^[transformFX", -- left
+        "sotm_commscabinet.png^[sheet:4x1:3,0", -- back
+        "sotm_commscabinet.png^[sheet:4x1:0,0", -- front
+    },
+    groups = {snappy=1},
+    stack_max = "1",
+
+    on_construct = function(pos)
+        local timer = minetest.get_node_timer(pos)
+        timer:start(5)
+    end,
+
+    -- Check for nearby collectors and win game if all types of collectors are
+    -- filled within radius.
+    on_timer = function(pos)
+        --local found_filled_collectors = {}
+        for nodename, _ in pairs(sotm_nodes.registered_collectors) do
+            print(nodename)
+            local pos = minetest.find_node_near(pos, 5, nodename)
+            if not pos then print("Missing: ".. nodename) return true end
+
+            local node = minetest.get_node(pos)
+            local result = (node.param2 >= 50)
+            if not result then print("Not filled:"..nodename) return true end
+            --found_filled_collectors[nodename] = (node.param2 >= 50)
+        end
+
+        if minetest.get_modpath("sotm_story") then
+            sotm_story.win_game()
+        end
+    end,
+})
+
 local worklight_box = {
 	type = "fixed",
 	fixed = {
@@ -128,4 +177,5 @@ minetest.register_alias("mapgen_stone", "sotm_nodes:moonrock")
 
 minetest.register_on_mods_loaded(function()
     sotm_tools.register_important_equipment("sotm_nodes:al2219")
+    sotm_tools.register_important_equipment("sotm_nodes:comms")
 end)
